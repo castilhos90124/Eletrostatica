@@ -44,14 +44,15 @@ public class eletrons_enabler_script : MonoBehaviour {
 			eletrons = active_script.num_eletrons;
 		}
 
-
+		eletrons++;		//correção do bug do primeiro eletron não ativar no balão
 
 						
 		foreach (Transform child in transform)
 		{
 			if(eletrons > 0){
-				if (child.gameObject.activeSelf == false)
-					child.gameObject.SetActive(true);
+				if (child.gameObject.activeSelf == false) {
+					child.gameObject.SetActive (true);
+				}
 				eletrons --;
 			}
 
@@ -63,7 +64,7 @@ public class eletrons_enabler_script : MonoBehaviour {
 			
 		}
 			
-
+		eletrons--;		//correção do bug do primeiro eletron não ativar no balão
 
 
 			//Debug.Log(la.activeSelf);
